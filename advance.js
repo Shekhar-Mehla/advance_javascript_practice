@@ -56,3 +56,48 @@ const kamal12 = new ATM(1, 100);
 console.log(kamal12.show_balance());
 console.log(kamal12.deposite(150));
 console.log(kamal12);
+
+// OOP CHALAANGE STATRT HERE
+const Tesla = {
+  model: "Tesla",
+};
+class Car {
+  constructor(obj, engine = false) {
+    this.engine = engine;
+    this.model = obj.model;
+    console.log(obj);
+  }
+
+  StartEngine() {
+    if (this.engine === false) {
+      this.engine = true;
+      console.log(`your ${this.model} is now  ON you can start driving`);
+    } else {
+      console.log(`your ${this.model} is already running you cannot restart.`);
+    }
+  }
+  StopEngine() {
+    if (this.engine === true) {
+      this.engine = false;
+      console.log(`your ${this.model} is now  stop`);
+    } else {
+      console.log(`your ${this.model} is already stop.`);
+    }
+  }
+
+  startdrive() {
+    if (this.engine === false) {
+      console.log(`your ${this.model} engine is off  start  engine to drive`);
+    } else if (this.engine === true) {
+      console.log(`${this.model} is moving`);
+    }
+  }
+}
+const mycar = new Car(Tesla);
+console.log(mycar.startdrive());
+console.log(mycar.StartEngine());
+console.log(mycar.startdrive());
+console.log(mycar.startdrive());
+console.log(mycar.StartEngine());
+console.log(mycar.StopEngine());
+console.log(mycar.StopEngine());
